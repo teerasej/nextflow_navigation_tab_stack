@@ -12,6 +12,20 @@ class ContactDetailPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(contact.name),
       ),
+      body: Container(
+        padding: EdgeInsets.all(10),
+        child: Column(
+          children: [
+            SizedBox(
+              width: double.infinity,
+              child: RaisedButton(
+                onPressed: () {},
+                child: Text('โทร ${contact.tel}'),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
