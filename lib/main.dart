@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nextflow_navigation_tab_stack/pages/contact_page.dart';
+import 'package:nextflow_navigation_tab_stack/pages/contact_page_builder.dart';
 import 'package:nextflow_navigation_tab_stack/pages/setting_page.dart';
 
 void main() {
@@ -38,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.blue,
         body: TabBarView(
           children: [
-            ContactPage(),
+            ContactPageBuilder(),
             SettingPage(),
           ],
         ),
