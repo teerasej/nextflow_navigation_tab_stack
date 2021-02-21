@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nextflow_navigation_tab_stack/models/contact_model.dart';
+import 'package:nextflow_navigation_tab_stack/pages/contact_detail_page.dart';
 
 class ContactPage extends StatefulWidget {
   @override
@@ -30,6 +31,16 @@ class _ContactPageState extends State<ContactPage> {
           return ListTile(
             title: Text(contact.name),
             subtitle: Text(contact.tel),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return ContactDetailPage(contact);
+                  },
+                ),
+              );
+            },
           );
         },
       ),
