@@ -22,6 +22,17 @@ class _ContactPageState extends State<ContactPage> {
       appBar: AppBar(
         title: Text('รายชื่อ'),
       ),
+      body: ListView.builder(
+        itemCount: _contacts.length,
+        itemBuilder: (BuildContext context, int index) {
+          ContactModel contact = _contacts[index];
+
+          return ListTile(
+            title: Text(contact.name),
+            subtitle: Text(contact.tel),
+          );
+        },
+      ),
     );
   }
 }
