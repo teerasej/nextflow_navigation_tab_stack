@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nextflow_navigation_tab_stack/pages/contact_page.dart';
+import 'package:nextflow_navigation_tab_stack/pages/setting_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,11 +31,28 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+    return DefaultTabController(
+      length: 2,
+      initialIndex: 0,
+      child: Scaffold(
+        backgroundColor: Colors.blue,
+        body: TabBarView(
+          children: [
+            ContactPage(),
+            SettingPage(),
+          ],
+        ),
+        bottomNavigationBar: TabBar(
+          tabs: [
+            Tab(
+              text: 'รายชื่อ',
+            ),
+            Tab(
+              text: 'ตั้งค่า',
+            )
+          ],
+        ),
       ),
-      body: Container(),
     );
   }
 }
