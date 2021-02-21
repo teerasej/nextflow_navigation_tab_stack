@@ -8,6 +8,20 @@ class ContactDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var emailButton;
+
+    if (contact.email.isNotEmpty) {
+      emailButton = SizedBox(
+        width: double.infinity,
+        child: RaisedButton(
+          onPressed: () {},
+          child: Text('ส่ง Email'),
+        ),
+      );
+    } else {
+      emailButton = Container();
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(contact.name),
@@ -22,7 +36,11 @@ class ContactDetailPage extends StatelessWidget {
                 onPressed: () {},
                 child: Text('โทร ${contact.tel}'),
               ),
-            )
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            emailButton
           ],
         ),
       ),
